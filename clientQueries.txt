@@ -1,0 +1,35 @@
+# Write your query or mutation here
+query getAllUsers{
+  users{
+    id
+    firstname
+    lastname
+  }
+}
+
+# Write your query or mutation here
+query getAllQuotes {
+  quotes{
+    id
+    name
+  }
+}
+
+# Write your query or mutation here
+{
+  user(id:"12345"){
+    firstname
+    lastname
+    email
+    quotes {
+      name
+    }
+  }
+}
+
+# Write your query or mutation here
+{
+  quote(by: "54638") {
+    name
+  }
+}
