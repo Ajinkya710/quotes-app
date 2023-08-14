@@ -1,7 +1,7 @@
 # Write your query or mutation here
 query getAllUsers{
   users{
-    id
+    _id
     firstname
     lastname
   }
@@ -10,14 +10,14 @@ query getAllUsers{
 # Write your query or mutation here
 query getAllQuotes {
   quotes{
-    id
+    _id
     name
   }
 }
 
 # Write your query or mutation here
 {
-  user(id:"12345"){
+  user(_id:"12345"){
     firstname
     lastname
     email
@@ -32,4 +32,23 @@ query getAllQuotes {
   quote(by: "54638") {
     name
   }
+}
+
+# Write your query or mutation here
+mutation signUp($newUser:UserInput){
+  createUser(newUser:$newUser) {
+    _id,
+    firstname,
+    lastname,
+    email,
+  }
+}
+
+{
+	"newUser": {
+  	"firstname":"Wayne",
+    "lastname":"Rooney",
+    "email":"wayne@gmail.com",
+    "password":"12345"
+	}
 }
